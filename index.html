@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CS171 - Final Project</title>
+
+    <!-- Load CSS libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <!-- own CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container-fluid" style="height: 100vh; padding-top: 1vh">
+
+    <h1> Title </h1>
+
+    <h2> What is Medicare? </h2>
+    <div> Medicare is a federally-funded health care program in the United States that primarily services older adults and adults with disabilities.
+        Every year, Medicare surveys its beneficiaries (recipients) about their demographics and healthcare experience.
+        This project hopes to illuminate some trends about Medicare beneficiaries and their healthcare experience.
+    </div>
+    <h2> Who is eligible for Medicare? </h2>
+    <div> Medicare is primarily available for people who are aged 65 or older. Provided that they are eligible for Social Security benefits, people
+        with disabilities, permanent kidney failure, or ALS may be able to enroll for Medicare before they turn 65. We invite you to explore our interactive
+        map to observe the geographic trends of Medicare eligibility. In America's Deep South and Appalachia regions, there is a higher concentration
+        of people with disabilities who are Medicare beneficiaries, with Arkansas having the highest proportion at 19.2%. These areas also experience
+        the highest amount of Chronic Kidney Disease according to the
+        <a href="https://nccd.cdc.gov/ckd/detail.aspx?Qnum=Q705">U.S. Centers for Disease Control and Prevention.</a> Similar to the concentration of
+        Medicare beneficiaries who have disabilities in the Deep South and Appalachia regions, most people younger than 65 years old who receive Medicare
+        live here as well.
+    </div>
+    <h2> Race, Ethnicity, & Regional Trends </h2>
+    <div>
+
+    </div>
+
+    <h2> What are the demographics of Medicare beneficiaries? </h2>
+    <h3>  </h3>
+    <div class = "row">
+        <div class = "col-sm-2" >
+            <div class = "row">
+            </div>
+        </div>
+        <div class = "col-sm-2" >
+            <div class = "row">
+                <div id = "medicare_reason_bar_div"> </div>
+            </div>
+        </div>
+        <div class = "col-sm-2" >
+            <div class = "row">
+                <div id = "age_bar_div"> </div>
+            </div>
+        </div>
+        <div class = "col-sm-2" >
+            <div class = "row">
+                <div id = "sex_bar_div"> </div>
+            </div>
+        </div>
+        <div class = "col-sm-2" >
+            <div class = "row">
+                <div id = "race_bar_div"> </div>
+            </div>
+        </div>
+        <div class = "col-sm-2" >
+            <div class = "row">
+            </div>
+        </div>
+    </div>
+    <div class = "row">
+        <div id = "demographic_map_div"> </div>
+    </div>
+
+    <h2> How does supplemental insurance coverage compare across demographics? </h2>
+    <div> Despite the coverage that Medicare provides, most beneficiaries opt for one or more kinds of supplemental insurance coverage.
+        Supplemental insurance helps cover healthcare expenses that traditional Medicare does not, for example for prescription drugs.
+    </div>
+
+    <div> Broadly, there are 4 main types of supplemental insurance coverage: Medicaid, Medicare Advantage, Part D, and private insurance. </div>
+
+    <h4> Medicaid </h4>
+    <div> Though eligibility for Medicaid varies by state, individuals who are eligible for Medicaid make incomes around the federal poverty level. </div>
+
+    <h4> Medicare Advantage </h4>
+    <div> Medicare Advantage plans are offered by private companies and they often include additional benefits like prescription drug coverage. </div>
+
+    <h4> Part D </h4>
+    <div> Part D helps beneficiaries cover their prescription drug expenses. </div>
+
+    <h4> Private insurance </h4>
+    <div> Some beneficiaries opt for more comprehensive coverage offered by private insurance companies, often administered by their current or former employer. </div>
+
+    <div> The visualization below informs how supplemental insurance coverage types varies by demographic groups.
+        You can click on one of the lighter bars to the far left to compare supplemental insurance across levels of those demographics.
+        Additionally, you can click on any of the supplemental insurance buttons to decide which bars to show and hide.
+        Lastly, clicking on one of the bars will show you what percent of those beneficiaries have had trouble paying their medical bills in the past year.
+    </div>
+
+    <div class = "row">
+        <div class = "col-sm-1 align-self-center" id = "demographic_buttons">
+            <div class = "row ">
+                <div class = "row">
+                    <div> Click on one category ... </div>
+                </div>
+                <div class = "row">
+                    <button class = "button demographic_button" id = "medicare_reason"  onclick = "click_demographic_button(this)">
+                        Eligibility Reason
+                    </button>
+                </div>
+                <div class = "row">
+                    <button class = "button demographic_button" id = "age" onclick = "click_demographic_button(this)">
+                       Age
+                    </button>
+                </div>
+                <div class = "row">
+                    <button class = "button demographic_button" id = "sex" onclick = "click_demographic_button(this)">
+                        Sex
+                    </button>
+                </div>
+                <div class = "row">
+                    <button class = "button demographic_button" id = "race" onclick = "click_demographic_button(this)">
+                        Race
+                    </button>
+                </div>
+                <div class = "row">
+                    <button class = "button demographic_button" id = "mental_illness" onclick = "click_demographic_button(this)">
+                        Mental Illness
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class = "col-sm-1 align-self-center" id = "bar_buttons">
+            <div class = "row">
+                <div class = "row">
+                    <div> ... and many bars as you'd like. </div>
+                </div>
+                <div class = "row">
+                    <button class = "button bar_button active" id = "medicaid" onclick = "click_bar_button(this)">
+                        Medicaid
+                    </button>
+                </div>
+                <div class = "row">
+                    <button class = "button bar_button active" id = "medicare_advantage" onclick = "click_bar_button(this)">
+                        Medicare Advantage
+                    </button>
+                </div>
+                <div class = "row">
+                    <button class = "button bar_button active" id = "part_d" onclick = "click_bar_button(this)">
+                    Part D
+                </button>
+                </div>
+                <div class = "row">
+                    <button class = "button bar_button active" id = "private_insurance" onclick = "click_bar_button(this)">
+                        Private
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class = "col-sm-10">
+            <div class = "row">
+                <div id = "bar_graph_div"> </div>
+            </div>
+        </div>
+    </div>
+    <div class = "row">
+        <div class = "note"> Note: since 1 beneficiary can have many types of supplemental insurance, the bars within a demographic category do not add up to 100%. </div>
+    </div>
+
+    <h2> Distribution of Out-of-Pocket Costs </h2>
+    <div class="row">
+        <div id="controls">
+            <label for="genderFilter">Gender:</label>
+            <select id="genderFilter">
+                <option value="all">All</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+
+            <label for="raceFilter">Race:</label>
+            <select id="raceFilter">
+                <option value="all">All</option>
+                <option value="white">Non-Hispanic White</option>
+                <option value="black">Non-Hispanic Black</option>
+                <option value="hispanic">Hispanic</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div id="oop_distribution_div"></div>
+        <div id="tooltip" style="position: absolute; display: none; background: #fff; border: 1px solid #ccc; padding: 5px; border-radius: 3px; pointer-events: none; font-size: 12px;"></div>
+    </div>
+
+    <h2> Relationship between Total Payment and Sum of Out-Of-Pocket Payments</h2>
+    <div class="row">
+        <div id="scatterPlotControls">
+            <label for="incomeFilter">Income Filter:</label>
+            <select id="incomeFilter">
+                <option value="all">All</option>
+                <option value="<25000">Income < $25,000</option>
+                <option value=">=25000">Income >= $25,000</option>
+            </select>
+        </div>
+        <div id="scatter-plot"></div>
+    </div>
+
+</div>
+
+<!-- embedding JS libraries -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://d3js.org/topojson.v2.min.js"></script>
+<script src="https://d3js.org/d3-geo.v2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+<script src="js/rachel_main.js"></script>
+<script src="js/rachel_grouped_bar.js"></script>
+<script src="js/rachel_demographic_map.js"></script>
+<script src="js/rachel_demographic_bar.js"></script>
+<script src="js/oopDistribution.js"></script>
+<script src="js/oopScatter.js"></script>
+</body>
+</html>
