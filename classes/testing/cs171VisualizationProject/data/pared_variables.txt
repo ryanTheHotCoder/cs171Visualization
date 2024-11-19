@@ -1,0 +1,84 @@
+
+ADM_H_MEDSTA       MEDSTAF                       Medicare status code as of 12/31         
+                             10,627                   1  1:Aged                                                                     
+                              2,139                   2  2:Disabled                                                                 
+                                 17                   3  3:Unknown                                                                  
+         Notes:  Results include all respondents; source administrative data.
+ 
+DEM_AGE            AGE2GRP                       Age group                                
+                              2,156                   1  1:Age <65 years                                                            
+                              4,508                   2  2:Age 65-74 years                                                          
+                              6,119                   3  3:Age 75+ years                                                            
+         Notes:  Named IV_AGE in 2013-15.
+                 Results include all respondents.
+ 
+DEM_SEX            SEX       ENS5,IN11           Gender                                   
+                              5,864                   1  1:Male                                                                     
+                              6,919                   2  2:Female                                                                   
+         Notes:  Named IV_SEX in 2013-15.
+                 Results include all respondents.
+                 Self-Reported at baseline/initial interview.
+ 
+DEM_RACE           RACE      BQ11A, DI1A         Race/ethnicity group                     
+                              9,467                   1  1:Non-Hispanic white                                                       
+                              1,211                   2  2:Non-Hispanic black                                                       
+                              1,396                   3  3:Hispanic                                                                 
+                                709                   4  4:Other                                                                    
+         Notes:  Named IV_RACE in 2013-15.
+                 Results include all respondents.
+
+HLT_OCPSYCHO       YESFMT    HFJ30A              Ever told had mental disorder            
+                                 15                   D  .D:Don't know                                                              
+                                 12                   R  .R:Refused                                                                 
+                                  8                   .  Inapplicable/Missing                                                       
+                              1,224                   1  1:Yes                                                                      
+                             11,524                   2  2:No                                                                       
+         Notes:  Results include all respondents.
+                 Named HLT_MENDIS in 2013.
+ 
+ADM_DUAL_FLAG_YR   DUALFMT                       Dual eligibility flag for the year       
+                             10,111                   1  1:Non dual                                                                 
+                                181                   2  2:Part year dual                                                           
+                              2,491                   3  3:Full year dual                                                           
+         Notes:  Results include all respondents; source administrative data.
+ 
+ADM_MA_FLAG_YR     MAFMT                         Medicare Advantage flag for the year     
+                              6,561                   1  1:No MA                                                                    
+                                403                   2  2:Part year MA                                                             
+                              5,819                   3  3:Full year MA                                                             
+         Notes:  Results include all respondents; source administrative data.
+ 
+ADM_PARTD          YESFMT                        Part D plan flag for the year            
+                             10,473                   1  1:Yes                                                                      
+                              2,310                   2  2:No                                                                       
+         Notes:  Results include all respondents; source administrative data.
+
+ 
+
+INS_D_PRIVNUM      YESFMT                        One or more private plans (excl. RDS)    
+                              6,135                   1  1:Yes                                                                      
+                              6,648                   2  2:No                                                                       
+         Notes:  Results include all respondents; source survey and administrative data.
+ 
+INS_D_PVESI        YESFMT                        Has employer-sponsored insurance         
+                              2,983                   1  1:Yes                                                                      
+                              9,800                   2  2:No                                                                       
+         Notes:  Results include all respondents; source administrative data.
+                 See similar 2013 variable INS_D_PRIVAT.
+ 
+INS_D_PVSELF       YESFMT                        Has self-purchased private insurance     
+                              3,674                   1  1:Yes                                                                      
+                              9,109                   2  2:No                                                                       
+         Notes:  Results include all respondents; source administrative data.
+                 See similar 2013 variable INS_D_PRIVAT.
+
+
+  
+ACC_PAYPROB        YESFMT    HFAC32A             Problem paying medical bills             
+                                 21                   D  .D:Don't know                                                              
+                                  3                   R  .R:Refused                                                                 
+                                  9                   .  Inapplicable/Missing                                                       
+                                815                   1  1:Yes                                                                      
+                             11,935                   2  2:No                                                                       
+                 First available in 2017
+  
